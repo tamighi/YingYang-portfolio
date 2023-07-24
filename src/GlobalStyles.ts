@@ -10,8 +10,9 @@ h1, h2, h3, h4, h5, h6{
 }
 body{
   overflow-x: hidden;
-  background-color: ${(props) => props.theme.bodyRgba};
-  font-family: "Source Sans Pro", sans-serif;
+  background-color: ${(props) => props.theme.primary};
+  font-family: "Karla", sans-serif;
+  font-weight: 500;
 }
 `;
 
