@@ -1,5 +1,8 @@
 import "styled-components";
-import { Theme } from "./types";
+import "@tanstack/router";
+import { darkTheme, lightTheme } from "./constants";
+
+type Theme = typeof lightTheme & typeof darkTheme;
 
 declare module "styled-components" {
   export interface DefaultTheme extends Theme {}

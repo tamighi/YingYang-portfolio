@@ -5,6 +5,7 @@ import {
   RouterProvider,
   lazy,
 } from "@tanstack/router";
+
 import { ThemeProvider } from "styled-components";
 
 import App from "./App";
@@ -73,8 +74,8 @@ declare module "@tanstack/router" {
 const Root = () => {
   return (
     <>
-      <GlobalStyles />
       <ThemeProvider theme={lightTheme}>
+        <GlobalStyles />
         <RouterProvider router={router} />
       </ThemeProvider>
     </>
