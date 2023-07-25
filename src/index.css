@@ -9,10 +9,10 @@
   --var-yin: #000000;
 }
 
-.body {
+body {
   overflow-x: hidden;
   font-family: "Karla", sans-serif;
   font-weight: 500;
   background-color: var(--var-yang);
-  color: (--var-yin);
+  color: var(--var-yin);
 }
