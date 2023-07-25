@@ -16,7 +16,7 @@ const SocialLinks = () => {
       <Link>
         <YoutubeIcon width={25} height={25} />
       </Link>
-      <div className="h-32 border-solid border-[1px]" />
+      <div className="h-32" style={{ border: "1px solid" }} />
     </div>
   );
 };
