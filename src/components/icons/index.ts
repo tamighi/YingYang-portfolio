@@ -1,0 +1,10 @@
+export { default as PowerIcon } from "./PowerIcon";
+export { default as LinkIcon } from "./LinkIcon";
+export { default as AnchorIcon } from "./AnchorIcon";
+export { default as FacebookIcon } from "./FacebookIcon";
+export { default as GithubIcon } from "./GithubIcon";
+export { default as LaptopIcon } from "./LaptopIcon";
+export { default as PaletteIcon } from "./PaletteIcon";
+export { default as TwitterIcon } from "./TwitterIcon";
+export { default as YingYangIcon } from "./YingYangIcon";
+export { default as YoutubeIcon } from "./YoutubeIcon";

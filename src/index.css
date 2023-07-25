@@ -4,24 +4,9 @@
 @tailwind components;
 @tailwind utilities;
 
-
 :root {
   --var-light: #fcf6f4;
   --var-dark: #000000;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  display: inline-block;
 }
 
 .body {
