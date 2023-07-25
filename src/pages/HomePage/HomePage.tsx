@@ -3,9 +3,10 @@ import { Logo, PageContainer, PowerButton } from "../../components";
 const HomePage = () => {
   return (
     <PageContainer>
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)" }}>
-        <Logo>AT</Logo>
-        <PowerButton style={{ justifySelf: "center" }} />
+      <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <Logo />
+        <PowerButton />
+        <div>Third</div>
       </div>
     </PageContainer>
   );

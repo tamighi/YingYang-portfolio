@@ -1,11 +1,10 @@
-import styled from "styled-components";
+import styles from "./PageContainer.module.css";
 
-const PageContainer = styled.div(() => ({
-  width: "100vw",
-  height: "100vh",
-  position: "relative",
-  padding: "2rem",
-  boxSizing: "border-box"
-}));
+type Props = React.HTMLAttributes<HTMLDivElement>;
+
+const PageContainer = (props: Props) => {
+  const { className = "", ...rest } = props;
+  return <div className={`${styles.PageContainer} ${className}`} {...rest} />;
+};
 
 export default PageContainer;

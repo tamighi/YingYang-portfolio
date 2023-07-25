@@ -1,9 +1,14 @@
-import styled from "styled-components";
+import styles from "./Logo.module.css";
 
-const Logo = styled.h1`
-  color: ${(props) => props.theme.text};
-  display: inline-block;
-  font-family: "Pacifico", cursive;
-`;
+type Props = React.HTMLAttributes<HTMLHeadingElement>;
+
+const Logo = (props: Props) => {
+  const { className = "", ...rest } = props;
+  return (
+    <h1 className={`${styles.Logo} ${className}`} {...rest}>
+      AT
+    </h1>
+  );
+};
 
 export default Logo;

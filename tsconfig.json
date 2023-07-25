@@ -1,9 +1,8 @@
 {
   "compilerOptions": {
-    "types": ["vite/client"],
     "plugins": [
       {
-        "name": "@styled/typescript-styled-plugin"
+        "name": "typescript-plugin-css-modules"
       }
     ],
     "target": "ES2020",
