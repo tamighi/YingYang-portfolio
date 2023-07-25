@@ -1,10 +1,5 @@
 import { Link } from "@tanstack/router";
-import {
-  FacebookIcon,
-  GithubIcon,
-  TwitterIcon,
-  YoutubeIcon,
-} from "../../../components";
+import { FacebookIcon, GithubIcon, TwitterIcon, YoutubeIcon } from "..";
 
 const SocialLinks = () => {
   return (

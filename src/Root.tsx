@@ -19,28 +19,10 @@ const homeRoute = new Route({
   component: () => <HomePage />,
 });
 
-const aboutRoute = new Route({
+const contactRoute = new Route({
   getParentRoute: () => rootRoute,
-  path: "/about",
-  component: lazy(() => import("./pages"), "AboutPage"),
-});
-
-const skillsRoute = new Route({
-  getParentRoute: () => rootRoute,
-  path: "/skills",
-  component: lazy(() => import("./pages"), "SkillsPage"),
-});
-
-const workRoute = new Route({
-  getParentRoute: () => rootRoute,
-  path: "/work",
-  component: lazy(() => import("./pages"), "WorkPage"),
-});
-
-const blogRoute = new Route({
-  getParentRoute: () => rootRoute,
-  path: "/blog",
-  component: lazy(() => import("./pages"), "BlogPage"),
+  path: "/contact",
+  component: lazy(() => import("./pages"), "ContactPage"),
 });
 
 const fallbackRoute = new Route({
@@ -51,10 +33,7 @@ const fallbackRoute = new Route({
 
 const routeTree = rootRoute.addChildren([
   homeRoute,
-  aboutRoute,
-  skillsRoute,
-  workRoute,
-  blogRoute,
+  contactRoute,
   fallbackRoute,
 ]);
 
