@@ -1,6 +1,5 @@
 import React from "react";
-import { YingYangIcon } from "../../components";
-import { SwatchesPicker } from "react-color";
+import { ColorPicker, YingYangIcon } from "../../components";
 
 const HomePage = () => {
   const [center, setCenter] = React.useState(true);
@@ -18,7 +17,7 @@ const HomePage = () => {
         <YingYangIcon />
       </button>
       <div className="flex-grow self-center">
-        <SwatchesPicker />
+        <ColorPicker />
       </div>
       <p className="text-xl max-w-2xl mb-32 text-center">
         Yin and yang are two sides of a dualism. Yin is passive and subdued.
