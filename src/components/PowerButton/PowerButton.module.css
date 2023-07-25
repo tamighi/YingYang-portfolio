@@ -1,6 +1,6 @@
 .PowerButton {
-  background-color: var(--var-light);
-  color: var(--var-dark);
+  background-color: var(--var-yang);
+  color: var(--var-yin);
   padding: 0.3rem;
   border-radius: 50%;
   border: 1px solid;
@@ -13,8 +13,8 @@
 }
 
 .PowerButton:hover {
-  background-color: var(--var-dark);
-  color: var(--var-light);
+  background-color: var(--var-yin);
+  color: var(--var-yang);
   box-shadow:
     rgba(0, 0, 0, 0.09) 0px 2px 1px,
     rgba(0, 0, 0, 0.09) 0px 4px 2px,

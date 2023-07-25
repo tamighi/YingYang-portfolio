@@ -5,13 +5,14 @@
 @tailwind utilities;
 
 :root {
-  --var-light: #fcf6f4;
-  --var-dark: #000000;
+  --var-yang: #fcf6f4;
+  --var-yin: #000000;
 }
 
 .body {
   overflow-x: hidden;
   font-family: "Karla", sans-serif;
   font-weight: 500;
-  background-color: var(--var-light);
+  background-color: var(--var-yang);
+  color: (--var-yin);
 }

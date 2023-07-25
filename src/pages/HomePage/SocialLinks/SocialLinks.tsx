@@ -21,7 +21,7 @@ const SocialLinks = () => {
       <Link>
         <YoutubeIcon width={25} height={25} />
       </Link>
-      <div className="w-[2px] h-32 bg-[var(--var-dark)]" />
+      <div className="w-[2px] h-32 bg-[var(--var-yin)]" />
     </div>
   );
 };
