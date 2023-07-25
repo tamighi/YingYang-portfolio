@@ -9,6 +9,9 @@ export default {
       animation: {
         "spin-slow": "spin 2.5s linear infinite",
       },
+      transitionProperty: {
+        yinYang: "top, left, width, height",
+      },
     },
   },
   plugins: [],

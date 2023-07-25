@@ -15,7 +15,7 @@ const BaseLayout = ({ children }: { children?: React.ReactNode }) => {
           <PowerButton />
 
           <div
-            className={`cursor-pointer absolute translate-x-[-50%] translate-y-[-50%] transition-all duration-1000 ${
+            className={`cursor-pointer absolute translate-x-[-50%] translate-y-[-50%] transition-yinYang duration-1000 ${
               center
                 ? "top-[50%] left-[50%] w-48 h-48"
                 : "top-[85%] left-[92%] w-32 h-32"

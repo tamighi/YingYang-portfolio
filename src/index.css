@@ -15,4 +15,5 @@ body {
   font-weight: 500;
   background-color: var(--var-yang);
   color: var(--var-yin);
+  @apply transition-colors duration-1000;
 }
