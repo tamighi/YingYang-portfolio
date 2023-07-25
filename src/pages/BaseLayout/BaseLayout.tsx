@@ -4,12 +4,11 @@ import { PageContainer, PowerButton, YingYangIcon } from "../../components";
 import LeftLayout from "./LeftLayout";
 import RightLayout from "./RightLayout";
 
-const BaseLayout = ({ children }: { children: React.ReactNode }) => {
+const BaseLayout = ({ children }: { children?: React.ReactNode }) => {
   const [center, setCenter] = React.useState(true);
   return (
     <PageContainer>
       <div className="h-full flex flex-row">
-
         <LeftLayout />
 
         <div className="flex flex-col items-center flex-grow">
@@ -24,13 +23,12 @@ const BaseLayout = ({ children }: { children: React.ReactNode }) => {
           >
             <YingYangIcon onClick={() => setCenter(!center)} />
           </div>
-          {center && <div className="flex-grow"/>}
+          {center && <div className="flex-grow" />}
 
           {children}
         </div>
 
         <RightLayout />
-
       </div>
     </PageContainer>
   );
