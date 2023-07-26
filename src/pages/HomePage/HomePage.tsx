@@ -39,7 +39,7 @@ const HomePage = () => {
 
   return (
     <div className="flex flex-col flex-grow items-center">
-      <button
+      {/* <button
         className={`cursor-pointer absolute translate-x-[-50%] translate-y-[-50%] transition-yinYang duration-1000 ${
           center
             ? "top-[50%] left-[50%] w-48 h-48"
@@ -48,13 +48,13 @@ const HomePage = () => {
         onClick={() => setCenter(!center)}
       >
         <YingYangIcon />
-      </button>
+      </button> */}
 
       <div className="flex-grow flex items-center">
-        {center ? null : <ColorPicker onChange={onColorChange} />}
+        <ColorPicker onChange={onColorChange} />
       </div>
 
-      <p className="text-balance text-xl max-w-2xl mb-32">
+      <p className="text-balance text-xl max-w-2xl mb-32 mt-20">
         Yin and yang are two sides of a dualism. Yin is passive and subdued.
         Yang, in contrast, is active and expressive. You can use any color to
         represent yin — similarly for yang, — so long as the contrast remains.
