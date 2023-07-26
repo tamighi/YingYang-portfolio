@@ -8,6 +8,7 @@ import {
 
 import App from "./App";
 import { HomePage } from "./pages";
+import { DropletProvider } from "./providers";
 
 const rootRoute = new RootRoute({
   component: App,
@@ -48,7 +49,9 @@ declare module "@tanstack/router" {
 const Root = () => {
   return (
     <>
-      <RouterProvider router={router} />
+      <DropletProvider>
+        <RouterProvider router={router} />
+      </DropletProvider>
     </>
   );
 };

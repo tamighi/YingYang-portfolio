@@ -1,8 +1,6 @@
-import React from "react";
-
 import styles from "./ColorPicker.module.css";
-import Droplet from "./Droplet";
 import Petal from "./Petal";
+import { useDroplet } from "../../providers";
 
 const colors = [
   "#ff0000", // Red
@@ -34,7 +32,7 @@ type Props = {
 const ColorPicker = (props: Props) => {
   const { onChange } = props;
 
-  const [positions, setPositions] = React.useState<{ x: number; y: number }>();
+  const { createDroplet } = useDroplet();
 
   return (
     <div className={styles.sunflower}>
@@ -48,7 +46,7 @@ const ColorPicker = (props: Props) => {
           onClick={(event) => {
             event.stopPropagation();
             onChange(color);
-            setPositions({x: event.clientX, y: event.clientY})
+            createDroplet({ x: event.clientX, y: event.clientY });
           }}
         />
       ))}
