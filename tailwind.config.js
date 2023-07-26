@@ -6,11 +6,21 @@ export default {
       fontFamily: {
         pacifica: ["Pacifica", "cursive"],
       },
-      animation: {
-        "spin-slow": "spin 2.5s linear infinite",
-      },
       transitionProperty: {
         yinYang: "top, left, width, height",
+      },
+      animation: {
+        droplet: "droplet 1s ease",
+      },
+      keyframes: {
+        droplet: {
+          "0%": {
+            transform: "scale(1)",
+          },
+          "100%": {
+            transform: "scale(3)",
+          },
+        },
       },
     },
   },

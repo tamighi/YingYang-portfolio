@@ -1,6 +1,7 @@
 import React from "react";
 
 import styles from "./ColorPicker.module.css";
+import Droplet from "./Droplet";
 import Petal from "./Petal";
 
 const colors = [
@@ -32,7 +33,8 @@ type Props = {
 
 const ColorPicker = (props: Props) => {
   const { onChange } = props;
-  const [clicked, setClicked] = React.useState(-1);
+
+  const [positions, setPositions] = React.useState<{ x: number; y: number }>();
 
   return (
     <div className={styles.sunflower}>
@@ -43,12 +45,12 @@ const ColorPicker = (props: Props) => {
             backgroundColor: color,
             transform: `rotate(${index * (360 / colors.length)}deg)`,
           }}
-          onClick={() => {
+          onClick={(event) => {
+            event.stopPropagation();
             onChange(color);
-            setClicked(index);
+            setPositions({x: event.clientX, y: event.clientY})
           }}
-       / >
-        
+        />
       ))}
     </div>
   );
