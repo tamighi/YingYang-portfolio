@@ -19,15 +19,11 @@ function getContrastingColor(hexColor: string): string {
   return contrastingColor;
 }
 
-
 const HomePage = () => {
   const [center, setCenter] = React.useState(true);
 
-  const [pickedColor, setPickerColor] = React.useState("#fff");
-
   const onColorChange = (hex: string) => {
     const color = Color(hex);
-    setPickerColor(hex);
 
     document.documentElement.style.setProperty("--var-yin", color.hex());
     document.documentElement.style.setProperty(
@@ -50,7 +46,9 @@ const HomePage = () => {
       </button>
 
       <div className="flex-grow flex items-center">
-        {center ? null : <ColorPicker onChange={onColorChange} value={pickedColor} />}
+        {center ? null : (
+          <ColorPicker onChange={onColorChange} />
+        )}
       </div>
 
       <p className="text-balance text-xl max-w-2xl mb-32">
