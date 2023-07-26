@@ -4,16 +4,17 @@ import { v4 as uuidv4 } from "uuid";
 
 import Droplet from "./Droplet";
 
-type Position = {
+type DropletProps = {
   x: number;
   y: number;
+  color?: string;
 };
 
-type DropletProps = {
-  createDroplet: (position: Position) => void;
+type DropletContextProps = {
+  createDroplet: (props: DropletProps) => void;
 };
 
-const dropletContext = React.createContext<DropletProps | null>(null);
+const dropletContext = React.createContext<DropletContextProps | null>(null);
 
 export const useDroplet = () => {
   const dropletProps = React.useContext(dropletContext);
@@ -29,10 +30,10 @@ const DropletProvider = (props: Props) => {
   const { children } = props;
 
   const [droplets, setDroplets] = React.useState<
-    (Position & { uuid: string })[]
+    (DropletProps & { uuid: string })[]
   >([]);
 
-  const createDroplet = (newPosition: Position) => {
+  const createDroplet = (newPosition: DropletProps) => {
     const newId = uuidv4();
 
     setDroplets((prevPositions) => [
@@ -42,13 +43,20 @@ const DropletProvider = (props: Props) => {
 
     setTimeout(() => {
       setDroplets((prevPositions) => prevPositions.slice(1));
-    }, 1000);
+    }, 2000);
   };
 
   return (
     <dropletContext.Provider value={{ createDroplet }}>
-      {droplets.map((position) => {
-        return <Droplet key={position.uuid} x={position.x} y={position.y} />;
+      {droplets.map((droplet) => {
+        return (
+          <Droplet
+            key={droplet.uuid}
+            x={droplet.x}
+            y={droplet.y}
+            color={droplet.color}
+          />
+        );
       })}
       {children}
     </dropletContext.Provider>

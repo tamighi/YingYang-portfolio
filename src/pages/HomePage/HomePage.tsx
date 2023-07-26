@@ -1,7 +1,9 @@
 import React from "react";
 
 import Color from "color";
+
 import { ColorPicker, YingYangIcon } from "../../components";
+import { useDroplet } from "../../providers";
 
 function getContrastingColor(hexColor: string): string {
   const color = Color(hexColor);
@@ -22,14 +24,17 @@ function getContrastingColor(hexColor: string): string {
 const HomePage = () => {
   const [center, setCenter] = React.useState(true);
 
-  const onColorChange = (hex: string) => {
+  const { createDroplet } = useDroplet();
+
+  const onColorChange = (hex: string, event: React.MouseEvent) => {
     const color = Color(hex);
 
-    document.documentElement.style.setProperty("--var-yin", color.hex());
-    document.documentElement.style.setProperty(
-      "--var-yang",
-      getContrastingColor(color.hex()),
-    );
+    const contrastColor = getContrastingColor(color.hex());
+
+    createDroplet({ x: event.clientX, y: event.clientY, color: contrastColor });
+
+    document.documentElement.style.setProperty("--var-yang", color.hex());
+    document.documentElement.style.setProperty("--var-yin", contrastColor);
   };
 
   return (
@@ -46,9 +51,7 @@ const HomePage = () => {
       </button>
 
       <div className="flex-grow flex items-center">
-        {center ? null : (
-          <ColorPicker onChange={onColorChange} />
-        )}
+        {center ? null : <ColorPicker onChange={onColorChange} />}
       </div>
 
       <p className="text-balance text-xl max-w-2xl mb-32">
