@@ -15,12 +15,17 @@ export default {
       keyframes: {
         droplet: {
           "0%": {
-            transform: "scale(0.8)",
-            opacity: 0.8
+            width: 0,
+            height: 0,
+            opacity: 0,
+          },
+          "50%": {
+            opacity: 0.4,
           },
           "100%": {
-            transform: "scale(10)",
-            opacity: 0
+            width: 500,
+            height: 500,
+            opacity: 0,
           },
         },
       },
