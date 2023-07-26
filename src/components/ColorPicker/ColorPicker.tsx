@@ -1,5 +1,7 @@
 import React from "react";
+
 import styles from "./ColorPicker.module.css";
+import Petal from "./Petal";
 
 const colors = [
   "#ff0000", // Red
@@ -35,9 +37,8 @@ const ColorPicker = (props: Props) => {
   return (
     <div className={styles.sunflower}>
       {colors.map((color, index) => (
-        <div
+        <Petal
           key={index}
-          className={styles.petal}
           style={{
             backgroundColor: color,
             transform: `rotate(${index * (360 / colors.length)}deg)`,

@@ -1,0 +1,17 @@
+.petal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  height: 80px;
+  transform-origin: 0% 50%;
+  border-radius: 50%;
+  opacity: 0.5;
+  cursor: pointer;
+  transition: opacity 0.3s ease-in-out;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.petal:hover {
+  opacity: 1;
+}
