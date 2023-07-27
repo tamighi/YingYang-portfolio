@@ -4,54 +4,53 @@ import Color from "color";
 
 import { ColorPicker, YingYangIcon } from "../../components";
 import { useDroplet } from "../../providers";
-
-function getContrastingColor(hexColor: string): string {
-  const color = Color(hexColor);
-
-  // Check if the color is light or dark based on its luminosity
-  const isLightColor = color.luminosity() > 0.5;
-
-  // Adjust the lightness based on the luminosity while preserving the original hue and saturation
-  const lightnessFactor = isLightColor ? 0.2 : 0.8;
-  const adjustedColor = color.lightness(lightnessFactor * 100);
-
-  // Rotate the hue by 180 degrees for better contrast
-  const contrastingColor = adjustedColor.rotate(180).hex();
-
-  return contrastingColor;
-}
+import { getContrastingColor } from "../../utils";
 
 const HomePage = () => {
-  const [center, setCenter] = React.useState(true);
+  const [yingLayout, setYinLayout] = React.useState(true);
 
   const { createDroplet } = useDroplet();
 
   const onColorChange = (hex: string, event: React.MouseEvent) => {
-    const color = Color(hex);
+    const color = Color(hex).hex();
 
-    const contrastColor = getContrastingColor(color.hex());
+    const contrastColor = getContrastingColor(color);
 
     createDroplet({ x: event.clientX, y: event.clientY, color: contrastColor });
 
-    document.documentElement.style.setProperty("--var-yang", color.hex());
+    document.documentElement.style.setProperty("--var-yang", color);
     document.documentElement.style.setProperty("--var-yin", contrastColor);
   };
 
   return (
     <div className="flex flex-col flex-grow items-center">
-      {/* <button
-        className={`cursor-pointer absolute translate-x-[-50%] translate-y-[-50%] transition-yinYang duration-1000 ${
-          center
-            ? "top-[50%] left-[50%] w-48 h-48"
-            : "top-[85%] left-[92%] w-32 h-32"
-        }`}
-        onClick={() => setCenter(!center)}
-      >
-        <YingYangIcon />
-      </button> */}
-
-      <div className="flex-grow flex items-center">
-        <ColorPicker onChange={onColorChange} />
+      <div className="flex-grow flex flex-col items-center justify-center">
+        {yingLayout ? (
+          <button className="w-48 h-48" onClick={() => setYinLayout(false)}>
+            <YingYangIcon />
+          </button>
+        ) : (
+          <>
+            <div className="flex w-full justify-around">
+              <button
+                onClick={() => {
+                  document.documentElement.style.setProperty(
+                    "--var-yang",
+                    "#fcf6f4"
+                  );
+                  document.documentElement.style.setProperty(
+                    "--var-yin",
+                    "#000000"
+                  );
+                }}
+              >
+                Reset
+              </button>
+              <button onClick={() => setYinLayout(true)}>Back</button>
+            </div>
+            <ColorPicker onChange={onColorChange} />
+          </>
+        )}
       </div>
 
       <p className="text-balance text-xl max-w-2xl mb-32 mt-20">
