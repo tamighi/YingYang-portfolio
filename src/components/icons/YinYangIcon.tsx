@@ -1,6 +1,6 @@
 type Props = React.SVGProps<SVGSVGElement>;
 
-const YingYangIcon = (props: Props) => {
+const YinYangIcon = (props: Props) => {
   return (
     <svg viewBox="0 0 496 512" {...props}>
       <path
@@ -11,4 +11,4 @@ const YingYangIcon = (props: Props) => {
   );
 };
 
-export default YingYangIcon;
+export default YinYangIcon;

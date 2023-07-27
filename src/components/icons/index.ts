@@ -6,5 +6,5 @@ export { default as GithubIcon } from "./GithubIcon";
 export { default as LaptopIcon } from "./LaptopIcon";
 export { default as PaletteIcon } from "./PaletteIcon";
 export { default as TwitterIcon } from "./TwitterIcon";
-export { default as YingYangIcon } from "./YingYangIcon";
+export { default as YinYangIcon } from "./YinYangIcon";
 export { default as YoutubeIcon } from "./YoutubeIcon";
